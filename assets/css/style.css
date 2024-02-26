@@ -133,6 +133,7 @@ body {
   .main-container {
     flex-direction: row-reverse;
     gap: 115px;
+    margin-top: 10px;
   }
 }
 
@@ -216,7 +217,7 @@ body {
   .menu .droper::before {
     width: 6px;
     left: 2px;
-    transform: rotate(-45deg);
+    transform: rotate(45deg);
   }
 }
 .menu .droper::after {
@@ -228,7 +229,7 @@ body {
   .menu .droper::after {
     width: 6px;
     left: 6px;
-    transform: rotate(45deg);
+    transform: rotate(-45deg);
   }
 }
 .menu .droper1 {
@@ -264,13 +265,18 @@ body {
   .menu .droper1::before {
     width: 6px;
     left: 3px;
-    transform: rotate(45deg);
+    transform: rotate(-45deg);
   }
 }
 .menu .droper1::after {
   top: 7px;
   right: -10px;
   transform: rotate(-45deg);
+}
+@media (min-width: 768px) {
+  .menu .droper1::after {
+    transform: rotate(45deg);
+  }
 }
 .menu.show {
   width: 230px;
@@ -318,7 +324,11 @@ body {
 .menu .atemp {
   display: flex;
   flex-direction: column;
-  gap: 16px;
+}
+.menu .atemp > ul {
+  display: flex;
+  gap: 20px;
+  flex-direction: column;
 }
 @media (min-width: 768px) {
   .menu .atemp {
@@ -327,7 +337,7 @@ body {
   .menu .atemp > ul {
     display: flex;
     flex-direction: row;
-    gap: 20px;
+    gap: 48px;
   }
 }
 .menu .temp {
@@ -350,7 +360,7 @@ body {
 }
 .menu .temp3 {
   display: flex;
-  gap: 10px;
+  gap: 36px;
   color: hsl(0, 0%, 41%);
   font-size: 12px;
   list-style-type: none;
@@ -364,13 +374,11 @@ body {
     justify-content: flex-end;
   }
 }
-.menu .temp3 > li {
-  padding: 10px;
+.menu .temp3 .reg {
+  padding: 5px 10px 5px 10px;
   width: 100%;
   display: flex;
   justify-content: center;
-}
-.menu .temp3 > li:hover {
   border: 1px solid hsl(0, 0%, 41%);
   padding: 9px;
   border-radius: 10px;
@@ -383,7 +391,6 @@ body {
 @media (min-width: 776px) {
   .menu a {
     position: relative;
-    padding: 10px 0 10px 0;
   }
 }
 
@@ -488,7 +495,7 @@ body {
 @media (min-width: 768px) {
   .body-contents {
     align-items: start;
-    width: 400px;
+    width: 397px;
   }
   .body-contents > h2 {
     font-size: 45px;
@@ -499,11 +506,17 @@ body {
   display: flex;
   justify-content: center;
   background: rgb(32, 32, 32);
-  border: none;
   padding: 11px 15px 11px 15px;
   border-radius: 10px;
   font-size: 14px;
   color: white;
+  width: 130px;
+  border: 2px solid transparent;
+}
+.body-contents a:hover {
+  background-color: transparent;
+  color: hsl(0, 0%, 41%);
+  border: 2px solid hsl(0, 0%, 41%);
 }
 
 .body-contents h2 {

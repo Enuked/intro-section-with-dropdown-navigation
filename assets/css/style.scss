@@ -137,6 +137,7 @@ body {
   @media (min-width: 768px) {
     flex-direction: row-reverse;
     gap: 115px;
+    margin-top: 10px;
   }
 }
 .headers h1 {
@@ -209,7 +210,7 @@ body {
     @media (min-width: 768px) {
       width: 6px;
       left: 2px;
-      transform: rotate(-45deg);
+      transform: rotate(45deg);
     }
   }
   .droper::after {
@@ -219,7 +220,7 @@ body {
     @media (min-width: 768px) {
       width: 6px;
       left: 6px;
-      transform: rotate(45deg);
+      transform: rotate(-45deg);
     }
   }
   .droper1 {
@@ -252,13 +253,17 @@ body {
     @media (min-width: 768px) {
       width: 6px;
       left: 3px;
-      transform: rotate(45deg);
+      transform: rotate(-45deg);
     }
   }
   .droper1::after {
     top: 7px;
     right: -10px;
     transform: rotate(-45deg);
+    @media (min-width: 768px) {
+      transform: rotate(45deg);
+
+    }
   }
   &.show {
     width: 230px;
@@ -306,15 +311,18 @@ body {
   .atemp {
     display: flex;
     flex-direction: column;
-    gap: 16px;
-
+    > ul {
+      display: flex;
+      gap: 20px;
+      flex-direction: column;
+    }
     @media (min-width: 768px) {
       justify-content: center;
 
       > ul {
         display: flex;
         flex-direction: row;
-        gap: 20px;
+        gap: 48px;
       }
     }
   }
@@ -336,7 +344,7 @@ body {
   }
   .temp3 {
     display: flex;
-    gap: 10px;
+    gap: 36px;
     color: $colorGray;
     font-size: 12px;
     list-style-type: none;
@@ -347,16 +355,14 @@ body {
       flex-direction: row;
       justify-content: flex-end;
     }
-    > li {
-      padding: 10px;
+    .reg {
+      padding: 5px 10px 5px 10px;
       width: 100%;
       display: flex;
       justify-content: center;
-      &:hover {
-        border: 1px solid $colorBlack;
-        padding: 9px;
-        border-radius: 10px;
-      }
+      border: 1px solid $colorBlack;
+      padding: 9px;
+      border-radius: 10px;
     }
   }
 }
@@ -365,7 +371,6 @@ body {
   cursor: pointer;
   @media (min-width: 776px) {
     position: relative;
-    padding: 10px 0 10px 0;
   }
 }
 
@@ -471,7 +476,7 @@ body {
       font-size: 45px;
     }
     align-items: start;
-    width: 400px;
+    width: 397px;
   }
 }
 
@@ -479,11 +484,19 @@ body {
   display: flex;
   justify-content: center;
   background: rgb(32, 32, 32);
-  border: none;
   padding: 11px 15px 11px 15px;
   border-radius: 10px;
   font-size: 14px;
   color: white;
+  width: 130px;
+  border: 2px solid transparent;
+
+  &:hover {
+    background-color: transparent;
+    color: $colorBlack;
+    border: 2px solid $colorBlack;
+
+  }
 }
 
 .body-contents h2 {
